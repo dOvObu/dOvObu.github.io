@@ -1,1 +1,0 @@
-# mOgOm.github.io

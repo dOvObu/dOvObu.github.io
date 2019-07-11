@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Permyakov&#39;s Blog</title>
+    <link>https://mogom.github.io/ru/blog/</link>
+    <description>Recent content in Blog on Permyakov&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mogom.github.io/ru/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Проклятые поля</title>
+      <link>https://mogom.github.io/ru/blog/cursed_fields/</link>
+      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogom.github.io/ru/blog/cursed_fields/</guid>
+      <description>На пути смелого искателя приключений возникли странные поля, излучавшие изумрудный свет.
+Когда путник ступил на эти земли, он заметил странное жужжание исходившее от его часов. Стрелки вращаются с бешеной скоростью. Должно быть, это он замедлился.
+Вдруг, он почувствовал голод и стал идти ещё медленнее.
+Белое солнце палит. Кажется, что эта прогулка длится уже целую вечность.
+Но&amp;hellip; только взгляните&amp;hellip; Это же граница странных полей. Зелёный свет начал растворяться, но голод всё ещё следовал за нашим путником&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

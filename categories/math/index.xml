@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>math on Permyakov&#39;s Blog</title>
+    <link>https://mogom.github.io/categories/math/</link>
+    <description>Recent content in math on Permyakov&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mogom.github.io/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cursed fields</title>
+      <link>https://mogom.github.io/blog/cursed_fields/</link>
+      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogom.github.io/blog/cursed_fields/</guid>
+      <description>The brave adventurer has arrived in strange fields. It&amp;rsquo;s shone with emerald light and time seemes to go faster and faster here. The traveler look at his watch and see that the arrows are turning at a breakneck pace. It might be he got slower.
+Suddenly he felt hunger and began to go even more slower.
+&amp;hellip;
+But&amp;hellip; look at that&amp;hellip; Here it is the boundary of the field. Green light begins to fade, but hunger is still here.</description>
+    </item>
+    
+  </channel>
+</rss>

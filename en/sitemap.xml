@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://mogom.github.io/blog/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/blog/cursed_fields/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/blog/cursed_fields/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/blog/cursed_fields/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/gamedev/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/categories/gamedev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/categories/gamedev/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/math/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/categories/math/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/categories/math/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/markdown/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/blog/examples/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/blog/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/hugo/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/blog/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/blog/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/go/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/categories/jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/blog/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/contact/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/tags/"
+                />
+  </url>
+  
+</urlset>
