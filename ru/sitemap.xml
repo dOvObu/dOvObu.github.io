@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://mogom.github.io/ru/blog/</loc>
-    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -20,7 +20,7 @@
   
   <url>
     <loc>https://mogom.github.io/ru/categories/</loc>
-    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -36,7 +36,7 @@
   
   <url>
     <loc>https://mogom.github.io/ru/</loc>
-    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -52,7 +52,7 @@
   
   <url>
     <loc>https://mogom.github.io/ru/categories/gamedev/</loc>
-    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -63,6 +63,37 @@
                 rel="alternate"
                 hreflang="ru"
                 href="https://mogom.github.io/ru/categories/gamedev/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/ru/categories/oop/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/categories/oop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/categories/oop/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://mogom.github.io/ru/blog/gamedev_patterns/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://mogom.github.io/blog/gamedev_patterns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://mogom.github.io/ru/blog/gamedev_patterns/"
                 />
   </url>
   

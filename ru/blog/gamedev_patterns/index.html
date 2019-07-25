@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+  <meta charset="utf-8">
+<title>Заметки по шаблонам - Permyakov&#39;s Blog</title>
+<meta name="description" content="Проще некуда">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <meta name="generator" content="Hugo 0.55.6" />
+  
+<meta itemprop="name" content="Заметки по шаблонам">
+<meta itemprop="description" content="Проще некуда">
+
+
+<meta itemprop="datePublished" content="2019-07-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="837">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <meta property="og:title" content="Заметки по шаблонам" />
+<meta property="og:description" content="Проще некуда" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mogom.github.io/ru/blog/gamedev_patterns/" />
+<meta property="article:published_time" content="2019-07-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-12T00:00:00&#43;00:00"/><meta property="og:site_name" content="Permyakov&#39;s Blog" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Заметки по шаблонам"/>
+<meta name="twitter:description" content="Проще некуда"/>
+
+  
+
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
+  
+    
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+      <link rel="stylesheet" href="/css/main.min.css">
+      <link rel="stylesheet" href="/css/add-on.css">
+    
+  
+  
+  
+  
+  
+</head>
+
+  <body>
+    
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/ru/">
+        
+          
+            Блог
+          
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        <a href="/ru/" class="link"><i class="fas fa-home">&nbsp;</i>Дом</a>
+      
+        <a href="/ru/about/" class="link"><i class="far fa-id-card">&nbsp;</i>О себе</a>
+      
+        <a href="/ru/blog/" class="link"><i class="far fa-newspaper">&nbsp;</i>Блог</a>
+      
+        <a href="/ru/categories/" class="link"><i class="fas fa-sitemap">&nbsp;</i>Категории</a>
+      
+        <a href="/ru/contact/" class="link"><i class="far fa-envelope">&nbsp;</i>Связь</a>
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+
+    </menu>
+    
+
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="lang-toggle" lang="ru"><span class="flag-icon flag-icon-ru" alt="ru"></span></a>
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="lang-menu" class="flyout-menu">
+  <a href="#" lang="ru" class="active"><span class="flag-icon flag-icon-ru" alt="ru"></span></a>
+  
+        <a href="https://mogom.github.io/blog/gamedev_patterns/" lang="en"><span class="flag-icon flag-icon-en" alt="en"></span></a>
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc&amp;url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f&amp;title=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f&amp;title=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f&amp;description=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f" target="_blank" class="share-btn email">
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="/ru/"><img src="/img/main/logo.jpg" class="circle" width="" alt="Hugo Future Imperfect Slim" /></a>
+  <header>
+    <h1>Permyakov's Blog</h1>
+  </header>
+  <main>
+    <p>Wake up buddy. We have a problem to solve.</p>
+  </main>
+  
+    <footer>
+      <ul class="social-icons">
+        
+
+        <li><a href="//github.com/mOgOm" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/telega_staraya" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+<li><a href="//telegram.me/meh_potato" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+
+
+
+<li><a href="mailto:c0_0b@mail.ru" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/ru/blog/gamedev_patterns/">Заметки по шаблонам</a></h2>
+    
+    
+        <p>Проще некуда</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2019-07-12 00:00:00 &#43;0000 UTC">
+      July 12, 2019
+    </time>
+    <span class="author">Mike Permyakov</span>
+    
+        <p>4 мин. чтения</p>
+    
+  </div>
+</header>
+
+  <section id="social-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc&amp;url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f&amp;title=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f&amp;title=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f&amp;description=%d0%97%d0%b0%d0%bc%d0%b5%d1%82%d0%ba%d0%b8%20%d0%bf%d0%be%20%d1%88%d0%b0%d0%b1%d0%bb%d0%be%d0%bd%d0%b0%d0%bc" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fmogom.github.io%2fru%2fblog%2fgamedev_patterns%2f" target="_blank" class="share-btn email">
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+<a href="/ru/blog/gamedev_patterns/" class="image featured">
+  <img src="/img/2019/07/pic05.jpg" alt="Pic 4">
+</a>
+
+
+  <div class="content">
+    
+
+<h2 id="уменьшение-связанности">Уменьшение связанности</h2>
+
+<ul>
+<li>Классы <em>А</em> и <em>Б</em> &ndash; <strong>связаны</strong> тогда, когда нельзя понять как <em>А</em> устроен, не зная устройства <em>Б</em>.</li>
+</ul>
+
+<p>Связанности мало, <strong>значит</strong> меньше нужно помнить, <strong>значит</strong> легче понять код.<br />
+<strong>Но</strong> связанность уменьшается <em>&lsquo;переходниками&rsquo;</em>.<br />
+Больше <em>&lsquo;переходников&rsquo;</em>, <strong>значит</strong> больше кода, <strong>значит</strong> труднее понять код.</p>
+
+<h3 id="жажда-скорости">Жажда скорости</h3>
+
+<p><em>&lsquo;Переходники&rsquo;</em> уменьшают производительность игры, но ускоряют прототипирование.<br />
+Легче сделать <strong>интересную</strong> игру <strong>быстрой</strong> (убрать <em>&lsquo;переходники&rsquo;</em>), чем <strong>быструю</strong> игру <strong>интересной</strong>.<br />
+<em>Говнокод</em> пишется ещё быстрее чем код с <em>&lsquo;переходниками&rsquo;</em>,<br />
+поэтому, его можно использовать для прототипирования.</p>
+
+<ul>
+<li>Используем <em>шаблоны</em>, пока не получится что-то <strong>интересное</strong>, а затем <strong>оптимизируем</strong>.</li>
+<li>Прототипный <em>говнокод</em>, после проверки идей, <strong>необходимо выбрасывать</strong>.</li>
+</ul>
+
+<p><br>
+<em>Хорошо оптимизированный</em> код часто</p>
+
+<ul>
+<li>прост для восприятия</li>
+<li>покрывает малую область использования</li>
+<li><strong>долго</strong> придумывается (от структур, через алгоритм)</li>
+<li>краток</li>
+</ul>
+
+<p><br>
+<em>Элегантный</em> код &ndash; неплохо оптимизирован и устойчив (покрывает большую облать использования).</p>
+
+<hr />
+
+<h2 id="обзор-шаблонов">Обзор шаблонов</h2>
+
+<h3 id="недооценённый-command">Недооценённый Command</h3>
+
+<blockquote>
+<p>Команда - это <em>&lsquo;овеществление&rsquo;</em> вызова метода<br />
+<em>Bob Nystrom</em></p>
+</blockquote>
+
+<pre><code class="language-cpp">bool closed = false;
+inline void close () {closed = true;}
+
+struct Command {
+    virtual void exec (Actor&amp; a) = 0;
+    virtual ~Command() {}
+};
+
+// Новые команды добавляются совсем просто
+struct NullObjCommand: public Command {void exec (Actor&amp; a) override {}};
+struct JumpCommand:    public Command {void exec (Actor&amp; a) override {a.jump ();}};
+struct SitDownCommand: public Command {void exec (Actor&amp; a) override {a.sit ();}};
+struct CloseCommand:   public Command {void exec (Actor&amp; a) override {close ();}};
+
+struct InputHandler
+{
+    std::unique_ptr&lt;Command&gt; button_W, button_S, button_N, button_Q;
+    Command&amp; handleInput (Key pressed) {
+        switch (pressed) {
+            // Новые клавиши/события добавляются чисто механически
+            case Key::W: return button_W.get ();
+            case Key::S: return button_S.get ();
+            case Key::N: return button_N.get ();
+            case Key::Q: return button_Q.get ();
+            default return pass.get ();
+        }
+    }
+private:
+    static std::unique_ptr&lt;Command&gt; pass;
+};
+std::unique_ptr&lt;Command&gt; InputHandler::pass {new NullObjCommand ()};
+
+auto main () -&gt; int {
+    // Ставим настройки
+    auto input = InputHandler {
+        new JumpCommand (),    // для Key::W
+        new SitDownCommand (), // для Key::S
+        new NullObjCommand (), // для Key::N
+        new CloseCommand (),   // для Key::Q
+    };
+    Actor actor;
+    while (!closed) {
+        puts (&quot;Press W to jump, S to sit-down and Q to exit ^_^&quot;);
+        inpt.handleInput (Keyboard::getKey ())-&gt;exec (actor);
+    }
+}
+</code></pre>
+
+<ul>
+<li>Можно запоминать команды <strong>в очередь</strong> (событий), <em>разрывая связь</em> между <strong>заказчиком</strong> и <strong>исполнением</strong>.</li>
+<li>Можно добавить метод <strong>undo</strong> в <em>Command</em> и хранить историю <em>комад</em> в <strong>списке</strong>.</li>
+<li>Если методы класса <em>Actor</em> вызывают методы своих полей, то это шаблон <em>&lsquo;Цепочка ответственности&rsquo;</em>.</li>
+</ul>
+
+<p><img src="https://img-fotki.yandex.ru/get/9831/103946387.53/0_c5241_b8e778d7_orig.png" alt="Command example" /></p>
+
+<p><br><br><br><br><br></p>
+
+<h3 id="два-особо-удачных-для-игр">Два особо удачных для игр</h3>
+
+<h4 id="flyweight">- Flyweight</h4>
+
+<blockquote>
+<p>Есть объект <strong>внутреннего</strong> класса, данные которого повторяются
+у кучи объектов <strong>внешнего</strong> (контекстно-зависимого) класса.</p>
+</blockquote>
+
+<pre><code class="language-cpp">// Внутренний класс с тяжёлой текстурой
+// и данными, которые не нужно менять
+struct Terrain {
+    Terrain (const Texture&amp; texture, int weight)
+    : texture_ (texture), weight_ (weight)
+    {}
+    int getWeight () const {return weight_;}
+    Texture* getTexture () const {return &amp;texture_;}
+private:
+    int weight_;
+    Texture texture_;
+};
+// Внешний класс
+struct World {
+
+    World () {
+        for (size_t x=0, x &lt; width, ++x) {     // рандомно разбрасываем
+            for (size_t y=0, y &lt; width, ++y) { // горы и траву по карте
+                if (random (10) == 0) {tiles_[x][y] = &amp;hillTerrain_;}
+                else {tiles[x][y] = &amp;grassTerrain_;}
+            }
+        }
+        size_t x = random (width);
+        for (size_t y=0, y &lt; width, ++y)  // где-то в центре,
+            tiles[x][y] = &amp;riverTerrain_; // добавляем реку
+    }
+    Terrain* getTile(size_t x, size_t y) {return tiles_[x][y];}
+private:
+    Terrain
+        grassTerrain_{GRASS_TEXTURE, 1}, // по одному тяжёлому
+        hillTerrain_ {HILL_TEXTURE,  3}, // объекту, на каждый
+        riverTerrain_{RIVER_TEXTURE, 2}; // тип покрытия
+
+    const size_t width = 10000, height = 20000;
+    Terrain* tiles_[width][height];
+};
+</code></pre>
+
+<p><img src="https://img-fotki.yandex.ru/get/9805/103946387.53/0_c542b_9223f07b_orig.png" alt="flyweight example" /></p>
+
+<h4 id="observer">- Observer</h4>
+
+<pre><code class="language-cpp">enum Event{
+    THE_ROOF_IS_IN_FIRE,
+    SOME_ANOTHER_EVENT
+};
+
+class Observer {
+public:
+    virtual ~Observer(){}
+    virtual void OnNotify(Event event) = 0;
+};
+
+class Subject {
+protected:
+    void notify(Event event) {
+        for (auto&amp; it : observers) it-&gt;OnNotify (event);
+    }
+    std::vector&lt;Observer*&gt; observers;
+};
+
+class Achievements : public Observer { // наблюдатель
+public:
+    virtual void OnNotify(Event event) {
+        switch(event){ // реагируем на события
+            case Event::THE_ROOF_IS_IN_FIRE:
+                if (!fireAchivementUnlocked) {
+                    puts(&quot;[We don't need no water, let the mfkr burn!] Achievement unlocked&quot;);
+                    fireAchivementUnlocked = true;
+                }
+            break;
+            default: break;
+        }
+    }
+private:
+    bool fireAchivementUnlocked = false;
+};
+
+class Physics : public Subject // наблюдаемый
+{
+public:
+    void UpdateFire() {
+        if (random(10) &gt; 8) notify (Event::THE_ROOF_IS_IN_FIRE);
+    }
+    void Subscribe(Observer* o){observers.push_back(o);}
+};
+
+auto main() -&gt; int {
+    Achievement achivement;
+    Physics roof;
+    roof.Subscribe (&amp;achivement);
+    // 1. можно подписать ачивку на кучу других вещей
+    // 2. можно подписать на горящую крышу, воспроизведение звука, анимации и т.д.
+
+    for (size_t idx = 0; idx &lt; 1000; ++idx) {
+        roof.UpdateFire ();
+    }
+}
+</code></pre>
+
+<p><img src="https://img-fotki.yandex.ru/get/9822/103946387.53/0_c55a2_39ba3463_orig.png" alt="observer example" />
+<br><br><br><br><br></p>
+
+<h3 id="два-перепутанных-с-шаблонами">Два перепутанных с шаблонами</h3>
+
+<h4 id="prototype">- Prototype</h4>
+
+<p>Казалось бы, чтобы не далать так:</p>
+
+<p><img src="https://img-fotki.yandex.ru/get/9094/103946387.54/0_c5eea_5f087144_orig.png" alt="many spawners for many monsters" /></p>
+
+<p>лучше сделать так:</p>
+
+<p><img src="https://img-fotki.yandex.ru/get/9094/103946387.54/0_c5ee9_c71f2208_orig.png" alt="one spawner for many monsters" /></p>
+
+<p><strong>но</strong> на в конечном итоге количество кода одинаковое.</p>
+
+<p>Более того, такой проблемы вообще не существует, т.к. для её решения есть</p>
+
+<pre><code class="language-cpp">// 1. делигаты
+Monster* spawnGhost() {return new Ghost();}
+typedef Monster* (*SpawnCallback)();
+class Spawner {
+public:
+    Spawner(SpawnCallback spawn):spawn_(spawn){}
+    Monster* spawnMonster(){return spawn_();}
+private:
+    SpawnCallback spawn_;
+};
+// 2. шаблоны
+class Spawner {
+public:
+    virtual ~Spawner(){}
+    virtual Monster* spawnMonster()=0;
+};
+template&lt;typename T&gt;
+class SpawnerFor : public Spawner {
+public:
+    Monster* spawnMonster()override{return new T();}
+}
+</code></pre>
+
+<p>Вообще эта тема используется как языковая парадигма в реальном ООП ЯП <strong>Self</strong> (которым вдохновлялся (не до конца) создатель ЯП Java Script &ndash; Брендан Эйх).
+В этом языке, данные связаны с методами так:</p>
+
+<p><img src="https://img-fotki.yandex.ru/get/9795/103946387.54/0_c5ee7_2d538f28_orig.png" alt="objects in self" /></p>
+
+<p>в ЯП с классами, так:</p>
+
+<p><img src="https://img-fotki.yandex.ru/get/9094/103946387.54/0_c5ee8_f57ed07e_orig.png" alt="languages with classes" /></p>
+
+<p>а в JavaScript, так:</p>
+
+<p><img src="https://img-fotki.yandex.ru/get/9094/103946387.54/0_c5ee6_7270655d_orig.png" alt="objects in javascript" /></p>
+
+<p>Код в последних двух вариантах получается организованнее.</p>
+
+<h4 id="state">- State</h4>
+
+<p><br><br><br><br><br></p>
+
+<h3 id="переоценённый-singleton">Переоценённый Singleton</h3>
+
+<p><br><br><br><br><br></p>
+
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://mogom.github.io/ru/categories/gamedev">gamedev</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://mogom.github.io/ru/categories/oop">oop</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+<article class="post">
+  
+
+</article>
+<div class="pagination">
+  
+    <a href="/ru/blog/cursed_fields/" class="button big previous"><i class="fas fa-angle-left"></i> Проклятые поля</a>
+  
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Последние сообщения</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+<a href="/ru/blog/gamedev_patterns/" class="image featured">
+  <img src="/img/2019/07/pic05.jpg" alt="Pic 4">
+</a>
+
+
+        </section>
+        <header>
+          <h1><a href="/ru/blog/gamedev_patterns/">Заметки по шаблонам</a></h1>
+          <time class="published" datetime="">July 12, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+<a href="/ru/blog/cursed_fields/" class="image featured">
+  <img src="/img/2019/07/pic04.jpg" alt="Pic 4">
+</a>
+
+
+        </section>
+        <header>
+          <h1><a href="/ru/blog/cursed_fields/">Проклятые поля</a></h1>
+          <time class="published" datetime="">July 8, 2019</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/ru/categories">Категории</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="/ru/categories/gamedev/">gamedev<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/ru/categories/math/">math<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/ru/categories/oop/">oop<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  <section id="mini-bio">
+    <header>
+      <h1>О себе</h1>
+    </header>
+    <p>test</p>
+    <footer>
+      <a href="/ru/about" class="button">Узнать больше</a>
+    </footer>
+  </section>
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="social-icons">
+        
+
+        <li><a href="//github.com/mOgOm" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/telega_staraya" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+<li><a href="//telegram.me/meh_potato" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+
+
+
+<li><a href="mailto:c0_0b@mail.ru" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2019
+      
+        Permyakov&#39;s Blog
+      
+    .
+    Powered by <a href="//gohugo.io" target="_blank" rel="noopener">Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/css.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/js.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  <script src=/js/util.js></script>
+  <script src=/js/main.js></script>
+  <script src=/js/add-on.js></script>
+  
+
+
+
+    </div>
+  </body>
+</html>

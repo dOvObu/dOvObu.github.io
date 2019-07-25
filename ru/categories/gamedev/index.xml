@@ -6,10 +6,24 @@
     <description>Recent content in gamedev on Permyakov&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mogom.github.io/ru/categories/gamedev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Заметки по шаблонам</title>
+      <link>https://mogom.github.io/ru/blog/gamedev_patterns/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogom.github.io/ru/blog/gamedev_patterns/</guid>
+      <description>Уменьшение связанности  Классы А и Б &amp;ndash; связаны тогда, когда нельзя понять как А устроен, не зная устройства Б.  Связанности мало, значит меньше нужно помнить, значит легче понять код.
+Но связанность уменьшается &amp;lsquo;переходниками&amp;rsquo;.
+Больше &amp;lsquo;переходников&amp;rsquo;, значит больше кода, значит труднее понять код.
+Жажда скорости &amp;lsquo;Переходники&amp;rsquo; уменьшают производительность игры, но ускоряют прототипирование.
+Легче сделать интересную игру быстрой (убрать &amp;lsquo;переходники&amp;rsquo;), чем быструю игру интересной.
+Говнокод пишется ещё быстрее чем код с &amp;lsquo;переходниками&amp;rsquo;,</description>
+    </item>
     
     <item>
       <title>Проклятые поля</title>

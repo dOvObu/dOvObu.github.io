@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Permyakov&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mogom.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>gamedev</title>
       <link>https://mogom.github.io/categories/gamedev/</link>
-      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://mogom.github.io/categories/gamedev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oop</title>
+      <link>https://mogom.github.io/categories/oop/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogom.github.io/categories/oop/</guid>
       <description></description>
     </item>
     
