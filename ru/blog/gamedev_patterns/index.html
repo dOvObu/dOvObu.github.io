@@ -16,7 +16,7 @@
 
 <meta itemprop="datePublished" content="2019-07-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="837">
+<meta itemprop="wordCount" content="1462">
 
 
 
@@ -225,7 +225,7 @@
     </time>
     <span class="author">Mike Permyakov</span>
     
-        <p>4 мин. чтения</p>
+        <p>7 мин. чтения</p>
     
   </div>
 </header>
@@ -331,49 +331,60 @@
 </blockquote>
 
 <pre><code class="language-cpp">bool closed = false;
-inline void close () {closed = true;}
 
-struct Command {
-    virtual void exec (Actor&amp; a) = 0;
-    virtual ~Command() {}
+inline void close()
+{
+    closed = true;
+}
+
+struct COMMAND {
+    virtual void Exec(ACTOR&amp; a) = 0;
+    virtual ~COMMAND() = default;
 };
+using pCOMMAND = std::unique_ptr&lt;COMMAND&gt;;
 
 // Новые команды добавляются совсем просто
-struct NullObjCommand: public Command {void exec (Actor&amp; a) override {}};
-struct JumpCommand:    public Command {void exec (Actor&amp; a) override {a.jump ();}};
-struct SitDownCommand: public Command {void exec (Actor&amp; a) override {a.sit ();}};
-struct CloseCommand:   public Command {void exec (Actor&amp; a) override {close ();}};
+struct NULL_OBJ_COMMAND: public COMMAND {void Exec(ACTOR&amp; a) override {}};
+struct JUMP_COMMAND:     public COMMAND {void Exec(ACTOR&amp; a) override {a.Jump();}};
+struct SIT_DOWN_COMMAND: public COMMAND {void Exec(ACTOR&amp; a) override {a.Sit();}};
+struct CLOSE_COMMAND:    public COMMAND {void Exec(ACTOR&amp; a) override {close();}};
 
-struct InputHandler
-{
-    std::unique_ptr&lt;Command&gt; button_W, button_S, button_N, button_Q;
-    Command&amp; handleInput (Key pressed) {
+struct INPUT_HANDLER {
+
+    pCOMMAND button_W;
+    pCOMMAND button_S;
+    pCOMMAND button_N;
+    pCOMMAND button_Q;
+
+    COMMAND&amp; HandleInput (KEY pressed)
+    {
         switch (pressed) {
-            // Новые клавиши/события добавляются чисто механически
-            case Key::W: return button_W.get ();
-            case Key::S: return button_S.get ();
-            case Key::N: return button_N.get ();
-            case Key::Q: return button_Q.get ();
+            case KEY::W: return button_W.get();
+            case KEY::S: return button_S.get();
+            case KEY::N: return button_N.get();
+            case KEY::Q: return button_Q.get();
             default return pass.get ();
         }
     }
 private:
-    static std::unique_ptr&lt;Command&gt; pass;
+    static pCOMMAND pass;
 };
-std::unique_ptr&lt;Command&gt; InputHandler::pass {new NullObjCommand ()};
+pCOMMAND INPUT_HANDLER::pass = new NULL_OBJ_COMMAND();
 
-auto main () -&gt; int {
+auto main () -&gt; int
+{
     // Ставим настройки
-    auto input = InputHandler {
-        new JumpCommand (),    // для Key::W
-        new SitDownCommand (), // для Key::S
-        new NullObjCommand (), // для Key::N
-        new CloseCommand (),   // для Key::Q
+    auto input = INPUT_HANDLER {
+        new JumpCommand(),    // для Key::W
+        new SitDownCommand(), // для Key::S
+        new NullObjCommand(), // для Key::N
+        new CloseCommand(),   // для Key::Q
     };
+
     Actor actor;
     while (!closed) {
-        puts (&quot;Press W to jump, S to sit-down and Q to exit ^_^&quot;);
-        inpt.handleInput (Keyboard::getKey ())-&gt;exec (actor);
+        puts(&quot;Press W to jump, S to sit-down and Q to exit ^_^&quot;);
+        inpt.HandleInput(Keyboard::getKey ())-&gt;exec (actor);
     }
 }
 </code></pre>
@@ -399,74 +410,102 @@ auto main () -&gt; int {
 
 <pre><code class="language-cpp">// Внутренний класс с тяжёлой текстурой
 // и данными, которые не нужно менять
-struct Terrain {
-    Terrain (const Texture&amp; texture, int weight)
-    : texture_ (texture), weight_ (weight)
+struct TERRAIN {
+    TERRAIN (const TEXTURE&amp; texture, int weight)
+     : texture_ (texture)
+     , weight_ (weight)
     {}
-    int getWeight () const {return weight_;}
-    Texture* getTexture () const {return &amp;texture_;}
+
+    int GetWeight () const
+    {
+        return weight_;
+    }
+
+    TEXTURE* GetTexture () const
+    {
+        return &amp;texture_;
+    }
 private:
     int weight_;
-    Texture texture_;
+    TEXTURE texture_;
 };
 // Внешний класс
-struct World {
+struct WORLD {
 
-    World () {
-        for (size_t x=0, x &lt; width, ++x) {     // рандомно разбрасываем
-            for (size_t y=0, y &lt; width, ++y) { // горы и траву по карте
-                if (random (10) == 0) {tiles_[x][y] = &amp;hillTerrain_;}
-                else {tiles[x][y] = &amp;grassTerrain_;}
+    WORLD ()
+    {
+        for (size_t x=0, x &lt; width, ++x) {     
+            for (size_t y=0, y &lt; width, ++y) {
+                tiles_[x][y] = (random (10) == 0)? &amp;hillTerrain_ : &amp;grassTerrain_;
             }
         }
         size_t x = random (width);
-        for (size_t y=0, y &lt; width, ++y)  // где-то в центре,
-            tiles[x][y] = &amp;riverTerrain_; // добавляем реку
+
+        for (size_t y=0, y &lt; width, ++y) {
+            tiles[x][y] = &amp;riverTerrain_;
+        }
     }
-    Terrain* getTile(size_t x, size_t y) {return tiles_[x][y];}
+
+    TERRAIN* GetTile(size_t x, size_t y)
+    {
+        return tiles_[x][y];
+    }
 private:
-    Terrain
-        grassTerrain_{GRASS_TEXTURE, 1}, // по одному тяжёлому
-        hillTerrain_ {HILL_TEXTURE,  3}, // объекту, на каждый
-        riverTerrain_{RIVER_TEXTURE, 2}; // тип покрытия
+    // По одному тяжёлому объекту, на каждый тип покрытия
+    TERRAIN grassTerrain_{GRASS_TEXTURE, 1};
+    TERRAIN hillTerrain_ {HILL_TEXTURE,  3};
+    TERRAIN riverTerrain_{RIVER_TEXTURE, 2};
 
     const size_t width = 10000, height = 20000;
+
     Terrain* tiles_[width][height];
 };
 </code></pre>
 
 <p><img src="https://img-fotki.yandex.ru/get/9805/103946387.53/0_c542b_9223f07b_orig.png" alt="flyweight example" /></p>
 
+<ol>
+<li>Экономим память</li>
+<li>Экономим время на отладку</li>
+</ol>
+
 <h4 id="observer">- Observer</h4>
 
-<pre><code class="language-cpp">enum Event{
-    THE_ROOF_IS_IN_FIRE,
-    SOME_ANOTHER_EVENT
+<pre><code class="language-cpp">enum EVENT {
+    TheRoofIsOnFire,
+    SomeAnotherEvent,
 };
-
-class Observer {
+// Интерфейсы наблюдаемого и наблюдателя
+class OBSERVER {
 public:
-    virtual ~Observer(){}
-    virtual void OnNotify(Event event) = 0;
+    virtual ~OBSERVER() = default;
+    virtual void OnNotify(EVENT event) = 0;
 };
 
-class Subject {
+class SUBJECT {
 protected:
-    void notify(Event event) {
-        for (auto&amp; it : observers) it-&gt;OnNotify (event);
+    void Notify(EVENT event)
+    {
+        for (auto&amp; it : observers) {
+            it-&gt;OnNotify (event);
+        }
     }
-    std::vector&lt;Observer*&gt; observers;
-};
 
-class Achievements : public Observer { // наблюдатель
+    std::vector&lt;OBSERVER*&gt; observers;
+};
+// --------------------------------------------
+class ACHIEVEMENT : public OBSERVER { 
 public:
-    virtual void OnNotify(Event event) {
-        switch(event){ // реагируем на события
-            case Event::THE_ROOF_IS_IN_FIRE:
+    virtual void OnNotify(EVENT event)
+    {
+        switch(event) {
+            case EVENT::TheRoofIsOnFire:
+
                 if (!fireAchivementUnlocked) {
                     puts(&quot;[We don't need no water, let the mfkr burn!] Achievement unlocked&quot;);
                     fireAchivementUnlocked = true;
                 }
+
             break;
             default: break;
         }
@@ -475,18 +514,26 @@ private:
     bool fireAchivementUnlocked = false;
 };
 
-class Physics : public Subject // наблюдаемый
-{
+class PHYSICS : public SUBJECT {
 public:
-    void UpdateFire() {
-        if (random(10) &gt; 8) notify (Event::THE_ROOF_IS_IN_FIRE);
+    void UpdateFire()
+    {
+        if (random(10) &gt; 8) {
+            Notify(Event::TheRoofIsOnFire);
+        }
     }
-    void Subscribe(Observer* o){observers.push_back(o);}
+
+    void Subscribe(OBSERVER* o)
+    {
+        observers.push_back(o);
+    }
 };
 
-auto main() -&gt; int {
-    Achievement achivement;
-    Physics roof;
+auto main() -&gt; int
+{
+    ACHIEVEMENT achivement;
+    PHYSICS roof;
+
     roof.Subscribe (&amp;achivement);
     // 1. можно подписать ачивку на кучу других вещей
     // 2. можно подписать на горящую крышу, воспроизведение звука, анимации и т.д.
@@ -497,8 +544,14 @@ auto main() -&gt; int {
 }
 </code></pre>
 
-<p><img src="https://img-fotki.yandex.ru/get/9822/103946387.53/0_c55a2_39ba3463_orig.png" alt="observer example" />
-<br><br><br><br><br></p>
+<p><img src="https://img-fotki.yandex.ru/get/9822/103946387.53/0_c55a2_39ba3463_orig.png" alt="observer example" /></p>
+
+<ol>
+<li>Легко создаются связи между объектами.</li>
+<li>До попы сложная отладка. Трудно понять, что с чем связано.</li>
+</ol>
+
+<p><br><br><br><br><br></p>
 
 <h3 id="два-перепутанных-с-шаблонами">Два перепутанных с шаблонами</h3>
 
@@ -512,34 +565,59 @@ auto main() -&gt; int {
 
 <p><img src="https://img-fotki.yandex.ru/get/9094/103946387.54/0_c5ee9_c71f2208_orig.png" alt="one spawner for many monsters" /></p>
 
-<p><strong>но</strong> на в конечном итоге количество кода одинаковое.</p>
+<p><strong>НО</strong>, на деле, в конечном итоге, количество кода получается одинаковое.</p>
 
 <p>Более того, такой проблемы вообще не существует, т.к. для её решения есть</p>
 
-<pre><code class="language-cpp">// 1. делигаты
-Monster* spawnGhost() {return new Ghost();}
-typedef Monster* (*SpawnCallback)();
-class Spawner {
+<ol>
+<li>Делигаты:</li>
+</ol>
+
+<pre><code class="language-cpp">MONSTER* spawnGhost()
+{
+    return new Ghost();
+}
+
+typedef MONSTER* (*SPAWN_CALLBACK)();
+
+class SPAWNER {
 public:
-    Spawner(SpawnCallback spawn):spawn_(spawn){}
-    Monster* spawnMonster(){return spawn_();}
+    SPAWNER(SPAWN_CALLBACK spawn)
+        :spawn_(spawn)
+    {}
+
+    MONSTER* SpawnMonster()
+    {
+        return spawn_();
+    }
 private:
-    SpawnCallback spawn_;
+    SPAWN_CALLBACK spawn_;
 };
-// 2. шаблоны
-class Spawner {
+</code></pre>
+
+<p>и</p>
+
+<ol>
+<li>Шаблоны:</li>
+</ol>
+
+<pre><code class="language-cpp">class SPAWNER {
 public:
-    virtual ~Spawner(){}
-    virtual Monster* spawnMonster()=0;
+    virtual ~SPAWNER()=default;
+    virtual MONSTER* SpawnMonster()=0;
 };
+
 template&lt;typename T&gt;
-class SpawnerFor : public Spawner {
+class SPAWNER_FOR : public SPAWNER {
 public:
-    Monster* spawnMonster()override{return new T();}
+    MONSTER* SpawnMonster()override
+    {
+        return new T();
+    }
 }
 </code></pre>
 
-<p>Вообще эта тема используется как языковая парадигма в реальном ООП ЯП <strong>Self</strong> (которым вдохновлялся (не до конца) создатель ЯП Java Script &ndash; Брендан Эйх).
+<p>Вообще, эта тема используется как языковая парадигма в реальном ООП ЯП <strong>Self</strong> (которым вдохновлялся (не до конца) создатель ЯП Java Script &ndash; Брендан Эйх).
 В этом языке, данные связаны с методами так:</p>
 
 <p><img src="https://img-fotki.yandex.ru/get/9795/103946387.54/0_c5ee7_2d538f28_orig.png" alt="objects in self" /></p>
@@ -556,9 +634,176 @@ public:
 
 <h4 id="state">- State</h4>
 
+<p>В gamedev широко применяется подвид автоматов &ndash; final state machine
+(бывают ещё hierarchical state machine, pushdown automata и т.д.).
+FSM позволяет не писать код с огромным количеством if-овых ветвлений
+и заставляет чётко выделить состояния и условия изменения.</p>
+
+<p>Это легче воспринимать и легче спроектировать, <strong>но</strong> FSM &ndash; автомат не Тьюринг полный и не очень подходит для разработки AI.</p>
+
+<p>Кроме того, кол-во состояний увеличивается во много раз, даже от небольших изменений.</p>
+
+<p><img src="https://img-fotki.yandex.ru/get/5309/103946387.54/0_c66af_78be7b84_orig.png" alt="fsm example" /></p>
+
+<p>Можно реализовать FSM используя <code>switch</code>, или <code>if</code> с <code>elif</code> и <code>else</code>:</p>
+
+<pre><code class="language-cpp">enum class STATE {
+    Standing,
+    Ducking,
+    Jumping,
+    Diving,
+};
+
+class PLAYER {
+public:
+    void HandleInput(INPUT input)
+    {
+        switch (state) {
+            case STATE::Standing:
+            if (input == INPUT::Press::B) { // условие перехода
+                state = STATE::Jumping;
+                this.SetAnimation(ANIMATION::Jump);
+            }
+            break;
+            /* то же самое для всех остальных состояний */
+            default: break;
+        }
+    }
+};
+</code></pre>
+
+<p>но так, мы быстро наткнёмся на смешивание состояний.
+Так как они лежат в одном месте, они начнут ссылаться на одни и те же поля.
+Это будет трудно отлаживать и расширять, поэтому и существует шаблон <strong>State</strong>.</p>
+
+<p>Суть в том, чтобы заменить <code>switch</code> на виртуальную таблицу, которая генерируется автоматически.</p>
+
+<pre><code class="language-cpp">// Интерфейс состояний
+class PLAYER_STATE {
+public:
+    virtual ~PLAYER_STATE() = default;
+    virtual void HandleInput(PLAYER&amp; player, INPUT input) {}
+    virtual void Update(PLAYER&amp; player) {}
+};
+// Теперь можно создавать состояния по мере надобности
+class DUCKING_STATE : public PLAYER_STATE {
+public:
+    DUCKING_STATE() = default;
+
+    void HandleInput(PLAYER&amp; player, INPUT input) override
+    {
+        if (input == RELEASE_DOWN) {
+            player.SetState (PLAYER::standing);
+            player.SetAnimation(ANIMATION::Stand);
+        }
+    }
+
+    void Update(PLAYER&amp; player) override
+    {
+        ++chargeTime;
+        if (chargeTime &gt; MAX_CHARGE) {
+            player.SuperBomb();
+        }
+    }
+private:
+    // Имеет отношение только к этому состоянию
+    int chargeTime{0};
+};
+// ... Тут классы других состояний ...
+
+
+// Теперь, тупо дилегируем обработку в 'состояние'
+class PLAYER {
+public:
+    static STANDING_STATE standing;
+    // ... Остальные объекты состояния ...
+
+    virtual void HandleInput(INPUT input)
+    {
+        state-&gt;HandleInput(*this, input);
+    }
+
+    virtual void Update()
+    {
+        state-&gt;Update(*this);
+    }
+
+    virtual void SetState(PLAYER_STATE&amp; state)
+    {
+        this.state = &amp;state;
+    }
+    // ... Всё остальное, что должен уметь Player ...
+private:
+    PLAYER_STATE* state;
+};
+</code></pre>
+
+<p>Интересные факты:</p>
+
+<ol>
+<li>Если состояния имеют по одному виртуальному методу и не имеют никаких полей, то можно обойтись ссылками на функции состояния.</li>
+<li>Можно впихивать статические экземпляры состояний в какой-нибудь класс, если нам не важно, что этими состояниями будут пользоваться много других FSM.</li>
+<li>Можно динамически создавать состояния под кажное изменение. В этом случае, у каждой FSM гарантированно будет по своему личному состоянию, но это будет приводить к фрагментации памяти и ударит по скорости.</li>
+</ol>
+
+<p><strong>Concurent State Machines</strong></p>
+
+<p>Если <code>PLAYER</code> из нашего примера будет иметь ссылки на два состояния двух FSM, то такая система называется <em>Concurent State Machines</em>.</p>
+
+<p><em>CSM</em> предпологают, возможность &lsquo;поглащать&rsquo; <code>input</code> некоторыми состояниями.
+Помимо этого, для взаимодействия конкурентных состояний, используют грубые <code>if</code> проверки, что до жути всё усложняет, приводит к багам, но как-то работает.</p>
+
+<hr />
+
 <p><br><br><br><br><br></p>
 
 <h3 id="переоценённый-singleton">Переоценённый Singleton</h3>
+
+<pre><code class="language-cpp">class MAIN_MODE {
+public:
+    static MAIN_MODE&amp; instance()
+    {
+        if (pInstance == nullptr) pInstance = new MAIN_MODE(); // ленивая инициализация
+
+        return *pInstance;
+    }
+
+private:
+    MAIN_MODE() = default;
+
+    static MAIN_MODE* pInstance;
+};
+
+MAIN_MODE* MAIN_MODE::pInstance{nullptr};
+</code></pre>
+
+<ul>
+<li>По сути, это <strong>глобальная переменная</strong>, так что обчно х.з. в каком она находится состоянии
+
+<ul>
+<li>делает код менее понятной</li>
+<li>усиливыает связанность (чтобы что-то поменять, приходится думать обо всех этих глобальных штуках)</li>
+<li>приводит к <a href="https://www.intuit.ru/studies/courses/10554/1092/lecture/27095">гонкам за данными</a></li>
+</ul></li>
+
+<li><p>Решает две проблемы (копия одна и она легко доступна), <strong>даже если вам надо решить одну</strong></p>
+
+<ul>
+<li>чтобы экземпляр был один, можно сделать флаг <code>instantiated</code> в <code>private</code>, а в конструкторе звать <code>assert(!instantiated)</code></li>
+<li>чтобы доставать было проще, можно:</li>
+</ul>
+
+<ol>
+<li>каждый раз, всюду делать <em>инъекцию</em> необходимых <em>инструментов</em> в функцию</li>
+<li>сделать <em>сквозное связывание</em>, т.е. бахнуть всюду нужный функционал в <code>protected</code> самого базового класса (бьёт по производительности)</li>
+<li>воспользоваться глобальным объектом, уже написанным до вас (бывают World, Game, AppMode, вот это вот всё)</li>
+<li>использовать шаблон <em>Service Locator</em></li>
+</ol></li>
+
+<li><p>Будет плохо, если ленивая инициализация чего-то большого пойдёт во время разгара online битвы.</p></li>
+</ul>
+
+<p>Так что, <strong>singleton вам не нужен</strong>.</p>
 
 <p><br><br><br><br><br></p>
 
