@@ -1,6 +1,7 @@
 lsi: false
 safe: true
 source: (root)
+title: mp note
 incremental: false
 highlighter: rouge
 gist:
