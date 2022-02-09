@@ -6,15 +6,10 @@ layout: home
 
 <h1>{{ page.title }}</h1>
 
+<dir id="test">
+<script>
+  document.getElementById("test").appendChild("someData");
+</script>
+</dir>
 
-<ul>
-
-{% for post in site.posts %}
-
-<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-
-{% endfor %}
-
-</ul>
-
-test content 6
+test content 7
