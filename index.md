@@ -9,7 +9,7 @@ layout: home
 <div id="test">
 </div>
 <script>
-  document.getElementById("test").appendChild("someData");
+  document.getElementById("test").innerHtml = "{{ page.title }}";
 </script>
 
 test content 8
