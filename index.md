@@ -1,3 +1,5 @@
+{% include mathjs_ascii %}
+
 # test markdown gh pages
 
 
