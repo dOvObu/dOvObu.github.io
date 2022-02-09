@@ -1,5 +1,5 @@
 lsi: false
-safe: true
+safe: false
 source: ""
 title: mp note
 incremental: false
