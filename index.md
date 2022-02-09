@@ -1,8 +1,9 @@
 ---
+title: test markdown gh pages
 layout: home
 ---
 
 
-# test markdown gh pages
+<h1>{{ page.title }}</h1>
 
 test content
