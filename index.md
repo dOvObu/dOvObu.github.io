@@ -6,4 +6,4 @@ layout: home
 
 <h1>{{ page.title }}</h1>
 
-test content
+test content 2
