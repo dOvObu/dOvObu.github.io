@@ -13,7 +13,7 @@ impMath: true
 
     {% for post in site.categories[category_name] %}
 
-<a href="{{ post.baseurl }}{{ post.url }}">{{ post.title }}</a>
+<a href="{{ post.baseurl }}{{ post.url }}">&tab;{{ post.title }}</a>
 
     {% endfor %}
   </details>
