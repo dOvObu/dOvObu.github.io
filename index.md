@@ -9,6 +9,8 @@ layout: home
 <div id="test">
 </div>
 
+\(  PV = n R T \) 
+
 {% for post in site.posts %}
 
 - [{{ post.title }}]({{ post.url }})
