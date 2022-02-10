@@ -9,7 +9,7 @@ layout: home
 <div id="test">
 </div>
 <script>
-  document.getElementById("test").innerHTML = "{{ site.posts }}";
+  document.getElementById("test").innerHTML = "{{ site.cupcakes }}";
 </script>
 
 test content 8
