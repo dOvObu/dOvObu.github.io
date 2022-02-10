@@ -11,6 +11,10 @@
     </style>
   </head>
   <body>
+      {% if page.mainPage != true %}
+        <br><br>
+        <a href="{{ page.baseurl }}">mp note</a>
+      {% endif %}
     <div class="content">
     {{ content }}
 
@@ -22,7 +26,6 @@
         <br>
         <a href="{{page.next.url}}">{{page.next.title}} → </a>
       {% endif %}
-
     </div>
   </body>
 </html>
