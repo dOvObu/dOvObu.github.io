@@ -5,5 +5,5 @@ categories: tests
 excerpt: Checkout
 ---
 
-# title of first blog post
+# blog post
 
