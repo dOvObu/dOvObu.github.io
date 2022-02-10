@@ -1,7 +1,7 @@
 ---
 title: test markdown gh pages
 layout: def
-impMJ: true
+impMath: true
 ---
 
 
