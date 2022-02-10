@@ -10,12 +10,11 @@ impMath: true
     {% capture category_name %}{{ category | first }}{% endcapture %}
   <details>
     <summary> {{ category_name }} </summary>
-
+    <ul>
     {% for post in site.categories[category_name] %}
-
-<a href="{{ post.baseurl }}{{ post.url }}">→ → {{ post.title }}</a>
-
+        <li><a href="{{ post.baseurl }}{{ post.url }}">→ {{ post.title }}</a></li>
     {% endfor %}
+    </ul>
   </details>
 {% endfor %}
 
