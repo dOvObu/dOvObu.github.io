@@ -9,8 +9,6 @@ postPage: false
 
 ![hello and wellcome](https://www.shadertoy.com/media/users/Mike_Permyakov/profile.jpeg)
 
-Добро пожаловать ^_^
-
 {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
   <details open>
@@ -22,5 +20,3 @@ postPage: false
     </ul>
   </details>
 {% endfor %}
-
-test content 8
