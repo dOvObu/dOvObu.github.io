@@ -1,21 +1,22 @@
 ---
-title: test markdown gh pages
+title: mp notes
 layout: def
 impMath: true
 ---
 
+# {{ page.title }}
 
-<h1>{{ page.title }}</h1>
+{% for category in site.categories %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+  <details>
+    <summary> {{ category_name }} </summary>
 
-<div id="test">
-</div>
-
-`PV = n R T`
-
-{% for post in site.posts %}
+    {% for post in site.categories[category_name] %}
 
 - [{{ post.title }}]({{ post.url }})
 
+    {% endfor %}
+  </details>
 {% endfor %}
 
 test content 8
