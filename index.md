@@ -10,9 +10,7 @@ impMath: true
 <div id="test">
 </div>
 
-<div>
-  `PV = n R T` 
-</div>
+`PV = n R T`
 
 {% for post in site.posts %}
 
