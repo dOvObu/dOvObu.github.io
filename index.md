@@ -2,7 +2,7 @@
 title: mp notes
 layout: def
 impMath: true
-postPage: false
+mainPage: true
 ---
 
 # {{ page.title }}
