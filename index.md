@@ -1,6 +1,7 @@
 ---
 title: test markdown gh pages
-layout: home
+layout: def
+impMJ: true
 ---
 
 
@@ -9,7 +10,9 @@ layout: home
 <div id="test">
 </div>
 
-\(  PV = n R T \) 
+<div>
+  `PV = n R T` 
+</div>
 
 {% for post in site.posts %}
 
