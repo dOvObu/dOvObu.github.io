@@ -33,7 +33,7 @@
       for (i = 0; i < ps.length; ++i)
       {
         var p = ps[i];
-        p.innerText = p.innerText.replace("\\(", "\"\n<div style=\"display:inline;\">`").replace("\\)", "`</div>\"");
+        p.innerText = p.innerText.replace("\\(", "\"`").replace("\\)", "`\"");
       }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
