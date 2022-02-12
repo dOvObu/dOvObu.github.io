@@ -35,7 +35,7 @@
       for (i = 0; i < ps.length; ++i)
       {
         var p = ps[i];
-        if (!p.innerText.includes("<img src=\""))
+        if (!p.innerHTML.includes("<img"))
         {
           p.innerText = p.innerText.replaceAll("\\{", "`").replaceAll("\\}", "`");
         }
