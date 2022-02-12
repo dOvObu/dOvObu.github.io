@@ -31,7 +31,7 @@
     <script>
       for (p in document.getElementsByTagName("p"))
       {
-        p.textContent = p.textContent.replace("\\(", "\"<div style=\"display:inline;\">`").replace("\\)", "`</div>\"");
+        p.textContent = p.innerText.replace("\\(", "\"<div style=\"display:inline;\">`").replace("\\)", "`</div>\"");
       }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
