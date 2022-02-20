@@ -10,7 +10,7 @@ excerpt: Checkout
 
 ![image](https://user-images.githubusercontent.com/43134602/154825488-0696f26a-f3e0-4a7e-9e12-35aa607b484f.png)
 
-Не знаю почему это кажется весёлым, при том, что есть нормальные vs с resharper-ом и rider
+Не знаю почему это кажется чем-то весёлым, при том, что есть нормальные vs с resharper-ом и rider
 
 1. качаешь архив https://github.com/neovim/neovim/releases
 2. разворачиваешь куда-нибудь
