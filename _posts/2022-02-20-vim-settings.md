@@ -19,17 +19,57 @@ excerpt: Checkout
 7. `:e $VIM/sysinit.vim`
 8. ```
    set number
-   set tabstop=2
-   set softtabstop=2
-   set shiftwidth=2
+   set tabstop=4
+   set expandtab
+   set softtabstop=4
+   set shiftwidth=4
    syntax on
    set encoding=utf-8
    set mouse=a
    source $VIMRUNTIME/mswin.vim
+
    call plug#begin('$VIM/plugged')
    Plug 'OmniSharp/omnisharp-vim'
-   Plug 'drzel/vim-repo-edit'
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+   Plug 'dense-analysis/ale'
+   Plug 'junegunn/fzf.vim'
+   Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
+   Plug 'Xuyuanp/nerdtree-git-plugin'
    call plug#end()
+
+   " tab autocompletion
+   function! s:check_back_space() abort
+     let col = col('.') - 1
+     return !col || getline('.')[col - 1]  =~ '\s'
+   endfunction
+
+   inoremap <silent><expr> <Tab>
+         \ pumvisible() ? "\<C-n>" :
+         \ <SID>check_back_space() ? "\<Tab>" :
+         \ coc#refresh()
+
+   " Map Ctrl-Backspace to delete the previous word in insert mode.
+   imap <C-BS> <C-W>
+
+   set title
+
+   augroup dirchange
+       autocmd!
+       autocmd DirChanged * let &titlestring=v:event['cwd']
+   augroup END
+
+   let g:ale_linters = { 'cs' : ['OmniSharp'] }
+   let b:ale_linters = ['cs', 'flow-language-server']
+   let mapleader=";"
+   autocmd FileType cs nnoremap <silent> <C-w> :OmniSharpGotoDefinition<CR>
+   autocmd FileType cs nnoremap <silent> <C-r> :OmniSharpRename<CR>
+   inoremap { {<CR>}<Esc>ko
+   nnoremap <silent> <Space> :NERDTreeToggle<CR>
+   "inoremap ( ()<Esc>ha
+   "inoremap [ []<Esc>ha
+   nnoremap <silent> <C-p> :Files!<CR>
+   set hlsearch
+   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
    ```
 8. `:w`
 9. `:source $VIM/sysinit.vim`
