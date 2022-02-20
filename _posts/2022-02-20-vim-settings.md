@@ -76,10 +76,11 @@ excerpt: Checkout
    ```
 8. `:w`
 9. `:source $VIM/sysinit.vim`
-10. `PlugInstall`
-11. `:q`
-12. ???
-13. Profit 😎
+10. `:PlugInstall`
+11. `:OmniSharpInstall`
+12. `:q`
+13. ???
+14. Profit 😎
 
 Горячие клавиши:
 - ctrl+i :: вперёд
