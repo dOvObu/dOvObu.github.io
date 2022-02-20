@@ -8,7 +8,7 @@ excerpt: Checkout
 
 # {{ page.title }}
 
-Не знаю почему ловлю fun, когда к этому переодически возвращаюсь (при том, что есть github1s.com)
+Не знаю почему это кажется весёлым, при том, что есть нормальные vs с resharper-ом и rider
 
 1. качаешь архив https://github.com/neovim/neovim/releases
 2. разворачиваешь куда-нибудь
