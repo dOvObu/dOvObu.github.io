@@ -13,11 +13,12 @@ excerpt: Checkout
 1. качаешь архив https://github.com/neovim/neovim/releases
 2. разворачиваешь куда-нибудь
 3. добавляешь в Path путь к `Neovim/bin` папке
-4. копируешь этот файл https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim в `Neovim/share/nvim/runtime/autoload`
-5. `Win + R`
-6. `nvim-qt` + `Enter`
-7. `:e $VIM/sysinit.vim`
-8. ```
+4. копируешь в эту же папку бинарник fzf.exe https://github.com/junegunn/fzf/releases
+5. копируешь этот файл https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim в `Neovim/share/nvim/runtime/autoload`
+6. `Win + R`
+7. `nvim-qt` + `Enter`
+8. `:e $VIM/sysinit.vim`
+9. ```
    set number
    set tabstop=4
    set expandtab
