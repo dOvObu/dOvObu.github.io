@@ -38,6 +38,5 @@ public static Texture2D GetAtlasTexture(this Sprite sprite, SpriteAtlas atlas = 
 можно так mip map bias менять (чем выше, тем более размыто)
 
 > вообще, mip map используется, чтоб зубцов на маленьких штуках не было
-
 ![no mipmaps](https://forum.unity.com/attachments/quad_nomips-gif.909044/)
 
