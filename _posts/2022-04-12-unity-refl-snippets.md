@@ -12,7 +12,7 @@ excerpt: Checkout
 
 #### Как посмотреть internal поля ассета
 
-у unity редактора есть режим разработчика
+в unity редакторе есть режим разработчика
 
 ```
 UnityEditor.EditorPrefs.SetBool("DeveloperMode", true);
