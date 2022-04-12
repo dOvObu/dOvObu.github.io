@@ -12,11 +12,13 @@ excerpt: Checkout
 
 #### Как посмотреть internal поля ассета
 
-у unity редактора есть режим разработчика в котором появляются  
+у unity редактора есть режим разработчика
 
 ```
 UnityEditor.EditorPrefs.SetBool("DeveloperMode", true);
 ```
+
+![image](https://user-images.githubusercontent.com/43134602/162987344-163a0bf3-fd8d-49e3-9339-b8ebae0d6cf8.png)
 
 #### Как получить текстуру unity-вого атласа в editor-е?
 
