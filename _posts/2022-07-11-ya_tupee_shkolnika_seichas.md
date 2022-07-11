@@ -31,4 +31,4 @@ excerpt: Checkout
 
 \\{a^3 - b^3 = (a - b)(a^2 + ab + b^2)\\}
 
-Они выглядят довольно просто, в asciimath формате, и у меня стало получаться их воспроизводить, только после того, как потратил пару !часов! на [эти задачи](https://mathter.pro/pesochnica/1_6_4_kak_predstavit_summu_v_vide_proizvedeniya.html)
+Они выглядят довольно просто, в asciimath формате, и у меня стало получаться их воспроизводить, только после того, как потратил пару !часов! на <a href="https://mathter.pro/pesochnica/1_6_4_kak_predstavit_summu_v_vide_proizvedeniya.html">эти задачи</a>
