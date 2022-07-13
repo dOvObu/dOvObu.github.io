@@ -26,63 +26,68 @@ excerpt: Checkout
 
 - Привести подобные слагаемые:
 
-&emsp;a) \\{1+3sqrt(2)+2sqrt(3)-5-3sqrt(3)+sqrt(2)+sqrt(3)+7\\}
+&emsp;&emsp;a) \\{1+3sqrt(2)+2sqrt(3)-5-3sqrt(3)+sqrt(2)+sqrt(3)+7\\}
 
-b) \\{a(1+b)-ab^2-(1+ab)\\}
+&emsp;&emsp;b) \\{a(1+b)-ab^2-(1+ab)\\}
 
-c) \\{3pi+2pi x - pi(1-x)\\}
+&emsp;&emsp;c) \\{3pi+2pi x - pi(1-x)\\}
 
 - Раскрыть скобки
 
-a) \\{1/2 x(x-2x^2)\\}
+&emsp;&emsp;a) \\{1/2 x(x-2x^2)\\}
 
-b) \\{(xy+1)(1-sqrt(3)(x))\\}
+&emsp;&emsp;b) \\{(xy+1)(1-sqrt(3)(x))\\}
 
-c) \\{x(x+1)(x-2)\\}
+&emsp;&emsp;c) \\{x(x+1)(x-2)\\}
 
-d) \\{(x-1)(x-sqrt(x)+2)\\}
+&emsp;&emsp;d) \\{(x-1)(x-sqrt(x)+2)\\}
 
-e) \\{(x-1/2)^2\\}
+&emsp;&emsp;e) \\{(x-1/2)^2\\}
 
-f) \\{(sqrt(2)+1)^2\\}
+&emsp;&emsp;f) \\{(sqrt(2)+1)^2\\}
 
-g) \\{(x-2)(x+1)(2x+4)\\}
+&emsp;&emsp;g) \\{(x-2)(x+1)(2x+4)\\}
 
-h) \\{(2x+3y)^3\\}
+&emsp;&emsp;h) \\{(2x+3y)^3\\}
 
-i) \\{(x^2+x+1)(x-1)\\}
+&emsp;&emsp;i) \\{(x^2+x+1)(x-1)\\}
 
 - Доказать, чтo
 
-\\{(a-b)^2=(b-a)^2\\}
+&emsp;&emsp;\\{(a-b)^2=(b-a)^2\\}
 
 - Вывести формулу для
 
-\\{(a+b)^4\\} и \\{(a-b)^4\\}.
+&emsp;&emsp;\\{(a+b)^4\\} и \\{(a-b)^4\\}.
 
 - Разложить на множители:
 
-a) \\{a^3-3a^2\\}
+&emsp;&emsp;a) \\{a^3-3a^2\\}
 
-b) \\{x^2 y+xy^2\\}
+&emsp;&emsp;b) \\{x^2 y+xy^2\\}
 
-c) \\{x^2 - 2\\}
+&emsp;&emsp;c) \\{x^2 - 2\\}
 
-d) \\{x^2 + 4x + 4\\}
+&emsp;&emsp;d) \\{x^2 + 4x + 4\\}
 
-e) \\{9x^2 - 6x + 1\\}
+&emsp;&emsp;e) \\{9x^2 - 6x + 1\\}
 
-f) \\{x^3 + x^2 - x - 1\\}
+&emsp;&emsp;f) \\{x^3 + x^2 - x - 1\\}
 
-g) \\{x^3+8\\}
+&emsp;&emsp;g) \\{x^3+8\\}
 
-h) \\{x-x^4\\}
+&emsp;&emsp;h) \\{x-x^4\\}
 
-i) \\{8x^3 - 12x^2y - y^3 + 6xy^2\\}
+&emsp;&emsp;i) \\{8x^3 - 12x^2y - y^3 + 6xy^2\\}
 
 - Упростить дроби:
-a) \\{(x^2 + 2x)/(x sqrt(x))\\}
-b) \\{(2ab^2)/(a^2 - 5ab)\\}
-c) \\{(x-1)/(sqrt(x-1))\\}
-d) \\{(2x+4)/(x^3 - 4x)\\}
-e) \\{(x^2 - y^2)/(x^2 + 2xy + y^2)\\}
+
+&emsp;&emsp;a) \\{(x^2 + 2x)/(x sqrt(x))\\}
+
+&emsp;&emsp;b) \\{(2ab^2)/(a^2 - 5ab)\\}
+
+&emsp;&emsp;c) \\{(x-1)/(sqrt(x-1))\\}
+
+&emsp;&emsp;d) \\{(2x+4)/(x^3 - 4x)\\}
+
+&emsp;&emsp;e) \\{(x^2 - y^2)/(x^2 + 2xy + y^2)\\}
