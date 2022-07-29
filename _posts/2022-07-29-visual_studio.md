@@ -1,5 +1,5 @@
 ---
-title: "Настраиваем neo vim в шindows"
+title: "Visual Studio"
 layout: def
 categories: vim
 impMath: false
