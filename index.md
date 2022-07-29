@@ -7,9 +7,7 @@ mainPage: true
 
 # {{ page.title }}
 
-![hello and wellcome](ava.jpg)
-
-<br>
+![hello and wellcome](https://mogom.github.io/ava.jpg)
 
 <br>
 {% for category in site.categories %}
