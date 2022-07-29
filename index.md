@@ -10,10 +10,6 @@ mainPage: true
 ![hello and wellcome](ava.jpg)
 
 <br>
-
-<iframe width="500" height="300" src="https://www.youtube-nocookie.com/embed/mFfkn9XZcp8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br>
 {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
   <details open>
