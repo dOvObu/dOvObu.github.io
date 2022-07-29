@@ -1,7 +1,7 @@
 ---
 title: "Введение в C#"
 layout: def
-categories: c#
+categories: cSharp
 impMath: false
 excerpt: Checkout
 ---
