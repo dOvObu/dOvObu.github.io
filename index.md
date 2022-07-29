@@ -9,6 +9,10 @@ mainPage: true
 
 ![hello and wellcome](https://mogom.github.io/ava.jpg)
 
+эт моя записная книжка
+
+так что тут должно быть просто удобно записывать и читать с любого устройства на котором есть не слишком старый браузер
+
 <br>
 {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
