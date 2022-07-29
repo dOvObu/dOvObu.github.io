@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio"
 layout: def
-categories: vim
+categories: c#
 impMath: false
 excerpt: Checkout
 ---
