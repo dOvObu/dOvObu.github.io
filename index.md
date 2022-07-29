@@ -11,12 +11,6 @@ mainPage: true
 
 <br>
 
-это просто моя записная книжка
-
-она не должна быть красивой, или сложной
-
-самое главное тут, это удобство поиска и заполнения
-
 <br>
 {% for category in site.categories %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
