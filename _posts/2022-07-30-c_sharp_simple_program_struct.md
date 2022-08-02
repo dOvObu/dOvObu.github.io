@@ -1,5 +1,5 @@
 ---
-title: "Структура программы на C#"
+title: "Структура простейшей программы на C#"
 layout: def
 categories: c#
 impMath: false
