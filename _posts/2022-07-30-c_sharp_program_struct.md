@@ -66,3 +66,21 @@ Console.WriteLine("А вот за этим компилятор наблюдае
 Console.WriteLine("Опять же, рабочий код"); // И комментарий, который начинается с двух слешей, а затем продолжается до конца строки
 ```
 
+# Настройка
+
+В каждом проекте есть свой файл с настройками с расширением **.csproj**
+
+Это такой текстовый файл в котором всё написано в вмде xml-ной разметки
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+</Project>
+```
+
+В **OutputType** тип сборки (exe или dll)
+
+В **TargetFramework** версия .NET-а
