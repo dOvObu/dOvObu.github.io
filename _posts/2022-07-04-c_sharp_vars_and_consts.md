@@ -42,6 +42,6 @@ string name = "Tom";
 Константы как переменные, но их можно только проинициализировать:
 
 ```
-string NAME = "Tom";
+const string NAME = "Tom";
 // NAME = "Jack"; уже написать нельзя
 ```
