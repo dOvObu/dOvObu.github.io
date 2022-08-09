@@ -27,5 +27,5 @@ Console.WriteLine("Я написал число {1}, а вы ввели {0}", te
 int num = Convert.ToInt32("42");
 double weight = Convert.ToDouble("1,82"); // символ разделителя целых и десятичных устанавливается вместе с системным языком
 double height = Double.Parse("1.82", CultureInfo.InvariantCulture); // но так можно жёстко привязаться к точке
-decimal pi Convert.ToDecimal("3,1415926535898");
+decimal pi = Convert.ToDecimal("3,1415926535898");
 ```
