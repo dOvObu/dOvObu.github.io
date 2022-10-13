@@ -1,0 +1,60 @@
+---
+title: "Фабричный шаблон"
+layout: def
+categories: порождающие_шаблоны
+impMath: true
+excerpt: Checkout
+---
+
+# {{ page.title }}
+
+```
+struct I_PRODUCT {
+  virtual std::string Operation() const = 0;
+  virtual ~I_PRODUCT() = default;
+};
+using PRODUCT = std::shared_ptr<I_PRODUCT>;
+```
+
+Конкретные "продукты":
+
+```
+struct PRODUCT_A : I_PRODUCT { std::string Operation() const override { return "result of ProductA"; } };
+struct PRODUCT_B : I_PRODUCT { std::string Operation() const override { return "result of ProductB"; } };
+```
+
+Интерфейс фабрики с методом-фабрика `Create`:
+
+```
+struct CREATOR {
+  virtual PRODUCT Create() = 0;
+  virtual std::string OptionalOperation() { return "optional business logic " + Create()->Operation(); }
+  virtual ~CREATOR() = default;
+};
+```
+
+Конкретные фабрики:
+
+```
+struct CREATOR1 : CREATOR { PRODUCT Create() override { return std::make_shared<PRODUCT1>(); } };
+struct CREATOR2 : CREATOR { PRODUCT Create() override { return std::make_shared<PRODUCT2>(); } };
+```
+
+### Как использовать:
+
+```
+void doWork(CREATOR& fabric)
+{
+  PRODUCT product = fabric.Create();
+  std::cout << product->Operation() << '\n';
+  std::cout << fabric->OptionalOperation() << '\n';
+  // yare-yare-yare..
+}
+
+int main()
+{
+  int productNumber;
+  std::cin >> productNumber;
+  doWork(productNumber == 1 ? (CREATOR)new CREATOR1() : (CREATOR)new CREATOR2);
+}
+```
