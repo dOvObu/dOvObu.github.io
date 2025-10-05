@@ -7,7 +7,7 @@ mainPage: true
 
 # {{ page.title }}
 
-![hello and wellcome](https://mogom.github.io/ava.jpg)
+![hello and wellcome](https://dovobu.github.io/ava.jpg)
 
 эт моя записная книжка
 
